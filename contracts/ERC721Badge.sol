@@ -44,7 +44,7 @@ contract ERC721Badge is ERC721Token {
     }
 
     /**
-    * @dev Gets the artwork for a token ID, or zero if no artwork set
+    * @dev Gets the artwork for a token ID, or zero if no date set
     * @param _tokenId uint256 ID of the token to query the approval of
     * @return string representing the artwork for the given token ID
     */
@@ -52,5 +52,31 @@ contract ERC721Badge is ERC721Token {
         return artworks[_tokenId];
     }
 
+    /**
+    * @dev Gets the description for a token ID, or zero if no artwork set
+    * @param _tokenId uint256 ID of the token to query the approval of
+    * @return string representing the description for the given token ID
+    */
+    function getDescription(uint256 _tokenId) public view returns (string) {
+        return super.tokenURI(_tokenId);
+    }
+
+    /**
+    * @dev Gets the date for a token ID, or zero if no date set
+    * @param _tokenId uint256 ID of the token to query the approval of
+    * @return string representing the date of issue for the given token ID
+    */
+    function getDate(uint256 _tokenId) public view returns (string) {
+        return dates[_tokenId];
+    }
+
+    /**
+    * @dev Gets the issuer for a token ID, or zero if no date set
+    * @param _tokenId uint256 ID of the token to query the approval of
+    * @return string representing the issuer for the given token ID
+    */
+    function getIssuer(uint256 _tokenId) public view returns (address) {
+        return issuers[_tokenId];
+    }
 
 }
