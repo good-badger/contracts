@@ -42,4 +42,15 @@ contract ERC721Badge is ERC721Token {
         dates[_tokenId] = _date;
         artworks[_tokenId] = _artwork;
     }
+
+    /**
+    * @dev Gets the artwork for a token ID, or zero if no artwork set
+    * @param _tokenId uint256 ID of the token to query the approval of
+    * @return string representing the artwork for the given token ID
+    */
+    function getArtwork(uint256 _tokenId) public view returns (string) {
+        return artworks[_tokenId];
+    }
+
+
 }
